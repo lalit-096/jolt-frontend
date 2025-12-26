@@ -1,0 +1,117 @@
+/* src/App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Search Results */
+.result-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.result-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result-metadata {
+  margin: 10px 0;
+}
+
+.result-metadata .badge {
+  margin-right: 5px;
+}
+
+.pdf-links {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.pdf-links ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+/* PDF Results */
+.year-distribution {
+  margin: 20px 0;
+}
+
+.year-charts {
+  margin-top: 10px;
+}
+
+.year-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.year-label {
+  width: 80px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.year-value {
+  background-color: #007bff;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.paper-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+
+.paper-details {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.year-section {
+  margin-bottom: 30px;
+}
+
+/* Dashboard */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.search-tips, .extraction-tips {
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.search-tips h3, .extraction-tips h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.search-tips ul, .extraction-tips ul {
+  padding-left: 20px;
+}
