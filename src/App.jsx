@@ -8,7 +8,9 @@ import SearchForm from './components/search/SearchForm';
 import SearchResults from './components/search/SearchResults';
 import PDFExtractor from './components/pdf/PDFExtractor';
 import PDFResults from './components/pdf/PDFResults';
+import PDFList from './components/pdf/PDFList';
 import './App.css';
+import './styles/pdfList.css';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
             <Route path="/results" element={<SearchResults />} />
             <Route path="/pdf-extract" element={<PDFExtractor />} />
             <Route path="/pdf-results" element={<PDFResults />} />
+            <Route path="/pdf-list" element={<PDFList />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

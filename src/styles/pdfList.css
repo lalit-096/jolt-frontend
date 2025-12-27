@@ -1,0 +1,313 @@
+/* PDF List Component Styles */
+
+.pdf-list-container {
+  padding: 20px 0;
+}
+
+/* PDF List Item */
+.pdf-list-item {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  border: 1px solid #dee2e6;
+}
+
+.pdf-list-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.pdf-list-item .card-body {
+  padding: 1.5rem;
+}
+
+.pdf-list-item .card-title {
+  color: #212529;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.pdf-list-item .badge {
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Controls Section */
+.controls-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.controls-section .form-control,
+.controls-section .form-select {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #dee2e6;
+}
+
+.controls-section .form-control:focus,
+.controls-section .form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Bulk Download Modal */
+.modal.show {
+  display: block;
+}
+
+.modal .modal-header {
+  background-color: #f8f9fa;
+}
+
+.modal .modal-title {
+  color: #212529;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.grouping-options {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.grouping-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.grouping-options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.grouping-options::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.grouping-options::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.grouping-options .form-check {
+  padding-left: 0;
+}
+
+.grouping-options .form-check-input {
+  margin-left: 0;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.grouping-options .form-check-label {
+  margin-bottom: 0;
+  user-select: none;
+}
+
+.grouping-options h6 {
+  color: #495057;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 2rem;
+}
+
+.page-link {
+  color: #007bff;
+  border-color: #dee2e6;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.page-link:hover {
+  background-color: #e9ecef;
+  color: #0056b3;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover:not(:disabled) {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Loading States */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pdf-list-item .card-body {
+    padding: 1rem;
+  }
+
+  .pdf-list-item .row > div {
+    margin-bottom: 1rem;
+  }
+
+  .controls-section {
+    padding: 1rem;
+  }
+
+  .controls-section .row > div {
+    margin-bottom: 0.75rem;
+  }
+
+  .modal-dialog {
+    margin: 1rem;
+  }
+
+  .grouping-options {
+    max-height: 300px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .page-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Empty State */
+.alert-info h4 {
+  color: #004085;
+  margin-bottom: 0.5rem;
+}
+
+.alert-info p {
+  margin-bottom: 0;
+  color: #0c5460;
+}
+
+/* Utility Classes */
+.text-md-center {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .text-md-center {
+    text-align: inherit;
+  }
+}
+
+/* Badge Styles */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.badge.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+.badge.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+/* Link Styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Modal Backdrop */
+.modal {
+  z-index: 1050;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure proper spacing for button groups */
+.d-grid gap-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+/* Icon Styles */
+.bi {
+  font-size: 1em;
+}
+
+.bi-download::before,
+.bi-cloud-download::before,
+.bi-file-pdf::before,
+.bi-diagram-3::before,
+.bi-sort-alpha-down::before,
+.bi-calendar::before {
+  vertical-align: -0.125em;
+}

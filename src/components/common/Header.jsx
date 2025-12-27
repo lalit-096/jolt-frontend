@@ -37,6 +37,11 @@ const Header = () => {
                   PDF Metadata
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/pdf-list">
+                  PDF Library
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

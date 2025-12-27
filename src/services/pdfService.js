@@ -68,3 +68,60 @@ export const getJSONDetails = async (filename) => {
     throw error;
   }
 };
+
+// Fetch PDF metadata list from backend
+export const fetchPDFMetadataList = async (page = 1, pageSize = 20) => {
+  try {
+    const response = await api.get('/pdf/metadata/list', {
+      params: {
+        page,
+        page_size: pageSize,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching PDF metadata list:', error);
+    throw error;
+  }
+};
+
+// Download individual PDF by ID
+export const downloadPDFById = async (pdfId) => {
+  try {
+    const response = await api.get(`/pdf/download/${pdfId}`, {
+      responseType: 'blob',
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error downloading PDF:', error);
+    throw error;
+  }
+};
+
+// Bulk download PDFs with grouping option
+export const bulkDownloadPDFs = async (groupingOption) => {
+  try {
+    const response = await api.post(
+      '/pdf/bulk-download',
+      { grouping_option: groupingOption },
+      { responseType: 'blob' }
+    );
+    return response.data;
+  } catch (error) {
+    console.error('Error bulk downloading PDFs:', error);
+    throw error;
+  }
+};
+
+// Load PDFs from a JSON metadata file
+export const loadPDFsFromJSON = async (filename) => {
+  try {
+    const response = await api.post('/pdf/metadata/json', {
+      json_filename: filename,
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error loading PDFs from JSON:', error);
+    throw error;
+  }
+};

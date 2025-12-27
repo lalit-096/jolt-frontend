@@ -54,7 +54,7 @@ const Dashboard = () => {
       </div>
       
       <div className="row mt-4">
-        <div className="col-md-6 mb-4">
+        <div className="col-md-4 mb-4">
           <div className="card">
             <div className="card-body">
               <h2 className="card-title">Search Google Scholar</h2>
@@ -68,7 +68,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="col-md-6 mb-4">
+        <div className="col-md-4 mb-4">
           <div className="card">
             <div className="card-body">
               <h2 className="card-title">Extract PDF Metadata</h2>
@@ -77,6 +77,21 @@ const Dashboard = () => {
               </p>
               <Link to="/pdf-extract" className="btn btn-primary">
                 Extract Metadata
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        <div className="col-md-4 mb-4">
+          <div className="card">
+            <div className="card-body">
+              <h2 className="card-title">PDF Library</h2>
+              <p className="card-text">
+                View and manage PDFs. Load PDFs from JSON files or browse existing PDFs.
+              </p>
+              <Link to="/pdf-list" className="btn btn-primary">
+                <i className="bi bi-file-pdf me-2" />
+                View PDF Library
               </Link>
             </div>
           </div>
@@ -110,17 +125,38 @@ const Dashboard = () => {
             <h5 className="card-header">Recent PDF Metadata</h5>
             <div className="card-body">
               {jsonFiles.length > 0 ? (
-                <ul className="list-group">
-                  {jsonFiles.slice(0, 5).map((file, index) => (
-                    <li key={index} className="list-group-item">
-                      <Link to="/pdf-results" state={{ filename: file }}>
-                        {file}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <>
+                  <ul className="list-group mb-3">
+                    {jsonFiles.slice(0, 5).map((file, index) => (
+                      <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
+                        <Link to="/pdf-results" state={{ filename: file }}>
+                          {file}
+                        </Link>
+                        <Link 
+                          to="/pdf-list" 
+                          state={{ jsonFilename: file, autoLoad: true }}
+                          className="btn btn-sm btn-outline-primary"
+                          title="Load PDFs from this JSON file"
+                        >
+                          <i className="bi bi-upload me-1" />
+                          Load PDFs
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/pdf-list" className="btn btn-primary w-100">
+                    <i className="bi bi-file-pdf me-2" />
+                    Go to PDF Library
+                  </Link>
+                </>
               ) : (
-                <p>No PDF metadata found. Try extracting metadata first.</p>
+                <>
+                  <p>No PDF metadata found. Try extracting metadata first.</p>
+                  <Link to="/pdf-list" className="btn btn-primary w-100">
+                    <i className="bi bi-file-pdf me-2" />
+                    Go to PDF Library
+                  </Link>
+                </>
               )}
             </div>
           </div>
@@ -136,7 +172,8 @@ const Dashboard = () => {
                 <li><strong>Search Google Scholar</strong> - Enter your query and get a list of papers</li>
                 <li><strong>View Results</strong> - See all papers found in your search</li>
                 <li><strong>Extract PDF Metadata</strong> - Process PDFs found in search results</li>
-                <li><strong>Analyze Metadata</strong> - View publication years and other details</li>
+                <li><strong>Load PDFs from JSON</strong> - Fetch PDFs from existing JSON metadata files</li>
+                <li><strong>PDF Library</strong> - View, filter, and download PDFs from your collection</li>
               </ol>
             </div>
           </div>

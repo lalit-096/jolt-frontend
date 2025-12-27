@@ -3,11 +3,11 @@ import api from './api';
 
 export const searchScholar = async (query, maxPages = 5, useThreading = true, maxThreads = 3) => {
   try {
-    const response = await api.post('/scraper/search', {
-      text: query,
+    const response = await api.post('/scholar/scrape', {
+      query: query,
       max_pages: maxPages,
       use_threading: useThreading,
-      max_threads: maxThreads
+      num_threads: maxThreads
     });
     return response.data;
   } catch (error) {

@@ -6,9 +6,14 @@ export const scrapeScholar = async (params) => {
   try {
     const response = await api.post('/scholar/scrape', {
       query: params.query,
-      max_pages: params.maxPages === 'auto' ? null : parseInt(params.maxPages, 10) || 5,
-      delay_between_pages: params.delay || 10,
-      use_threading: params.useThreading || false,
+      max_pages: params.maxPages ? parseInt(params.maxPages, 10) : null,
+      filters: {
+        year_from: params.yearFrom,
+        year_to: params.yearTo,
+        doc_type: "0,5",
+        exclude_patents: true
+      },
+      output_filename: params.outputFilename || null,
       num_threads: params.numThreads || 3
     });
     
